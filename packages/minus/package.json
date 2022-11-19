@@ -1,0 +1,16 @@
+{
+  "name": "minus",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "test": "echo minus"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "divise": "workspace:^1.0.0"
+  }
+}
