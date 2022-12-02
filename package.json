@@ -8,11 +8,16 @@
     "build": "pnpm -r --filter='./packages/**' run build",
     "test": "pnpm -r --filter='./packages/**' run test",
     "changeset": "changeset",
-    "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -s -r"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r"
   },
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/huxianghe/aedrian"
+	},
   "author": "",
   "devDependencies": {
     "@types/node": "^18.11.9",
+    "conventional-changelog": "^3.1.25",
     "conventional-changelog-cli": "^2.2.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
