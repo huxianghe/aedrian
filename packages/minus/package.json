@@ -1,6 +1,6 @@
 {
   "name": "minus",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "divise": "workspace:^1.0.0"
+    "divise": "workspace:^2.0.0"
   }
 }

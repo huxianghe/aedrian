@@ -13,10 +13,6 @@ const styles = `
   content: "";
 }
 
-.content-container #frozen-center td {
-  transition: background 0.3s;
-}
-
 </style>
 `
 
@@ -28,10 +24,10 @@ const camelize = (str) => {
 }
 
 const commonTdStyles = {
-  textAlign: 'left',
   lineHeight: 1.5715,
   color: 'rgba(0,0,0,.85)',
-  padding: '12px 8px',
+  // padding: '12px 8px',
+  // textAlign: 'left',
 //   border: 'none',
 //   borderBottomWidth: '1px',
 //   borderBottomStyle: 'solid',
@@ -73,6 +69,29 @@ $('.content-container #frozen-north td').each((_, dom) => {
 $('.content-container #frozen-center td').each((_, dom) => {
   const styles = $(dom).attr('style')
   if (styles) {
+    const nextStyles = styles
+      .slice(0, styles.length - 1)
+      .split(';')
+      .reduce((prev, nextVal) => {
+        const [key, value] = nextVal.split(':')
+        prev[camelize(key)] = value
+        return prev
+      }, {})
+    // 删除默认黑体
+    if (nextStyles.color === 'rgb(0,0,0)') {
+      delete nextStyles.color
+    }
+    $(dom).css({
+      ...commonTdStyles,
+      ...nextStyles
+    })
+  }
+})
+
+$('.content-container td').each((_, dom) => {
+  const styles = $(dom).attr('style')
+  const hasChildren = $(dom).children().length > 0
+  if (styles & hasChildren) {
     const nextStyles = styles
       .slice(0, styles.length - 1)
       .split(';')
