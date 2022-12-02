@@ -8,7 +8,7 @@
     "build": "pnpm -r --filter='./packages/**' run build",
     "test": "pnpm -r --filter='./packages/**' run test",
     "changeset": "changeset",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r"
+    "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -s -r"
   },
   "author": "",
   "devDependencies": {
